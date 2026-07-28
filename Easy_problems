@@ -67,3 +67,5 @@ Solution - class Solution {
         return prev;
     }
 }
+Problem 561 - Array parition
+solution- 

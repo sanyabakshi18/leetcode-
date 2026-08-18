@@ -183,3 +183,31 @@ class MyStack {
         return q.isEmpty();
     }
 }
+probelm 3471- Find the largest Almost missing integer 
+solution- class Solution {
+    public int largestInteger(int[] nums, int k) {
+        int n = nums.length;
+        int[] count = new int[51];
+
+        // Count in how many windows each number appears
+        for (int i = 0; i <= n - k; i++) {
+            boolean[] seen = new boolean[51];
+
+            for (int j = i; j < i + k; j++) {
+                if (!seen[nums[j]]) {
+                    count[nums[j]]++;
+                    seen[nums[j]] = true;
+                }
+            }
+        }
+
+        // Find the largest number appearing in exactly one window
+        for (int num = 50; num >= 1; num--) {
+            if (count[num] == 1) {
+                return num;
+            }
+        }
+
+        return -1;
+    }
+}

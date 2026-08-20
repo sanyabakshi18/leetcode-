@@ -246,6 +246,28 @@ class Solution {
             return;
         }
 
+problem 3069- Distribute elements in 2 arrays
+solution-class Solution {
+    public int[] resultArray(int[] nums) {
+        int n = nums.length;
+
+        int[] ans = new int[n];
+        int index = 0;
+
+        // First array
+        for (int i = 0; i < n; i += 2) {
+            ans[index++] = nums[i];
+        }
+
+        // Second array
+        for (int i = 1; i < n; i += 2) {
+            ans[index++] = nums[i];
+        }
+
+        return ans;
+    }
+}
+
         postorder(root.left, result);
         postorder(root.right, result);
         result.add(root.val);

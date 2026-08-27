@@ -388,3 +388,9 @@ solution - class Solution {
         return result;
     }
 }
+problem 136- Power of two
+solution - class Solution {
+    public boolean isPowerOfTwo(int n) {
+        return n > 0 && (n & (n - 1)) == 0;
+    }
+}
